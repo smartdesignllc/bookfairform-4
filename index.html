@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Registration Form (F&B)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicons / App Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="icon" href="/favicon.ico?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0b5fff">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* Optional: basic page/container styling */
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#fff; color:#111; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+    .form-wrap { position: relative; }
+    /* Ensure responsive width for iframe */
+    #JotFormIFrame-260522492982462 { width: 100%; border: 0; display: block; }
+  </style>
+</head>
+<body>
+  <main class="container">
+   
+
+    <div class="form-wrap">
+      <iframe
+        id="JotFormIFrame-260522492982462"
+        title="Registration Form (F&amp;B)"
+        allow="geolocation; microphone; camera; fullscreen; payment"
+        allowtransparency="true"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-downloads"
+        src="https://form.jotform.com/260522492982462"
+        frameborder="0"
+        style="min-width:100%;max-width:100%;height:539px;border:none;"
+        scrolling="no"
+      ></iframe>
+    </div>
+
+    <noscript>
+      Your browser does not support JavaScript. Please open the form directly:
+      <a href="https://form.jotform.com/260522492982462" rel="noopener">Open Form</a>.
+    </noscript>
+  </main>
+
+  <!-- Jotform official embed handler -->
+  <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js" defer></script>
+  <script>
+    // Initialize Jotform embed handler after script loads
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.jotformEmbedHandler) {
+        window.jotformEmbedHandler("iframe[id='JotFormIFrame-260522492982462']", "https://form.jotform.com/");
+      }
+    });
+
+    // Optional: Auto-resize the iframe to its content height via postMessage
+    (function () {
+      var iframe = document.getElementById('JotFormIFrame-260522492982462');
+
+      // Listen for Jotform postMessage events (height changes, scroll requests, etc.)
+      window.addEventListener('message', function (e) {
+        if (!e.data) return;
+        var data = (typeof e.data === 'string') ? e.data : '';
+        if (data.indexOf('setHeight') > -1) {
+          var args = data.split(':');
+          if (args.length > 1) {
+            var newHeight = parseInt(args[args.length - 1], 10);
+            if (!isNaN(newHeight) && newHeight > 300) {
+              iframe.style.height = newHeight + 'px';
+            }
+          }
+        }
+        // Optional: handle scrollIntoView and url change messages if desired
+        // if (data.indexOf('scrollIntoView') > -1) iframe.scrollIntoView();
+      }, false);
+    })();
+  </script>
+</body>
+</html>
